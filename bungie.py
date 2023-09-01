@@ -19,7 +19,7 @@ auth_link = session.authorization_url(base_auth_url)
 
 print(f"Authorization Link: {auth_link[0]}")
 
-redirect_response = input(f"Paste url here----->")
+redirect_response = input(f"Paste url here---->")
 
 session.fetch_token(
     client_id=client_id,
