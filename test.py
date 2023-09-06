@@ -1,16 +1,17 @@
-from flask import Flask
-import requests
+from flask import Flask, request, jsonify, render_template
+
 app = Flask(__name__)
 
 
-@app.route("/home/<num>")
+@app.route("/home/prime_checker")
 def home(num):
-    numb = int(num)
-    if (numb % 2) == 0:
-        numb = True
-    else:
-        numb = False
-    return str(numb)
+    v = 1
+    return str(False) if int(num) % 2 else str(True)
+
+
+@app.route("/form")
+def form():
+    return render_template('test.html')
 
 
 if __name__ == "__main__":
