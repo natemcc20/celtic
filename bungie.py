@@ -2,6 +2,12 @@ import requests
 import os
 import json
 from requests_oauthlib import OAuth2Session
+from flask import Flask
+
+
+# app = Flask(__name__)
+#
+# app.route("/home")
 
 url_base = "https://www.bungie.net/platform/Destiny2/"
 redirect_url = "https://tekksparrow-programs.github.io/website"
@@ -30,8 +36,14 @@ session.fetch_token(
 
 header = {"X-API-Key": f'{os.getenv("BUNGIE_KEY")}'}
 resp = session.get("https://www.bungie.net/Platform/Social/Friends", headers=header)
+
+
+# def home():
 print(resp.status_code, resp.reason, resp.text)
-print(1)
+
+
+# if __name__ == "__main__":
+#     app.run(host="0.0.0.0", port=8080, debug=True)
 
 
 
