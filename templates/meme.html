@@ -2,16 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" content="device-width">
-    <link rel="icon" href="http://example.com/favicon.png">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/neutron-style.css') }}"/>
     <title>Dank Meme Page</title>
+    <link rel="icon" href="{{ url_for('static',filename='images/troll.png') }}"/>
 </head>
-<body bgcolor="black">
-    <div >
-        <center>
-            <img src="{{ meme_pic }}" alt="{{ subreddit }}" style="">
-            <br>
-            <text style="color: aqua ; font-size: 25px;">This meme is from r/{{ subreddit }}</text>
-        </center>
-    </div>
+<body>
+<div id="list">
+    <ul>
+        <li><a href="default.asp">Home</a></li>
+        <li><a href="news.asp">News</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+        <li><a href="about.asp">About</a></li>
+    </ul>
+</div>
+<div>
+    <a href="/"><input type="button" id="button" value="Next Meme"></a>
+    <img id="meme" src="{{ meme_pic }}" alt="{{ subreddit }}">
+    <br>
+    <text id="txt">This meme is from r/{{ subreddit }}</text>
+</div>
 </body>
 </html>

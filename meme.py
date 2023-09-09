@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory, url_for
 import json
 import requests
 
@@ -22,12 +22,22 @@ class Meme:
 meme = Meme()
 
 
+# @app.route('/favicon.ico')
+# def favicon():
+#     return send_from_directory(os.path.join(app.root_path, 'static'),
+#                                'favicon.ico', mimetype='images/favicon-32x32.png')
+
+
+# app.add_url_rule('/favicon.ico',
+#                  redirect_to=url_for('static', filename='favicon.ico'))
+
 @app.route("/")
 def idx():
     return render_template("meme.html", **meme.get())
 
 
-app.run("0.0.0.0", port=8080, debug=True)
+if __name__ == "__main__":
+    app.run("0.0.0.0", port=8080, debug=True)
 
 
 
@@ -37,3 +47,4 @@ app.run("0.0.0.0", port=8080, debug=True)
 #     meme_large = response["preview"][-2]
 #     subreddit = response["subreddit"]
 #     return meme_large, subreddit
+#     <a href=”/your_flask_funtion”><input type=”button” value=”call_flask_funtion”></a>

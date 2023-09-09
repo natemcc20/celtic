@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+#button {
+    width: 100px;
+    margin: auto;
+    display: block;
+    color: blue;
+    background-color: darkcyan;
+    width: 160px;
+    height: 50px;
+    font-size: 25px;
+    text-decoration: none !important;
+}
+
+#txt {
+    color: blue;
+    font-size: 25px;
+    width: 350px;
+    margin: auto;
+    display: block;
+}
+
+body {
+    background-color:  black;
+}
+
+#meme {
+    padding: 1%;
+    max-height: 500px;
+    max-width: 500px;
+    min-height: 500px;
+    min-width: 500px;
+    /*position: absolute;*/
+    width: 100px;
+    margin: auto;
+    display: block;
+}
+
+#list {
+    width: 100px;
+    display: block;
+}
+
+ul {
+
+}
+
+ul li {
+        list-style: none;
+}
+
+ul li a {
+text-decoration: none;
+}
