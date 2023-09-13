@@ -36,6 +36,11 @@ def idx():
     return render_template("meme.html", **meme.get())
 
 
+@app.route("/likes")
+def likes():
+    return render_template('likes.html')
+
+
 if __name__ == "__main__":
     app.run("0.0.0.0", port=8080, debug=True)
 

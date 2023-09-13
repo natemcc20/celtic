@@ -7,19 +7,28 @@
     <link rel="icon" href="{{ url_for('static',filename='images/troll.png') }}"/>
 </head>
 <body>
-<div id="list">
-    <ul>
-        <li><a href="default.asp">Home</a></li>
-        <li><a href="news.asp">News</a></li>
-        <li><a href="contact.asp">Contact</a></li>
-        <li><a href="about.asp">About</a></li>
-    </ul>
+<div class="container">
+    <button class="hamburger">
+        <div class="bar"></div>
+    </button>
 </div>
+<nav class="nav">
+    <a href="/">Home</a>
+    <a href="/likes">Likes</a>
+    <a href="#">Subreddits</a>
+    <a href="#">About</a>
+</nav>
+<button id="button"><a id='a' href="/">Next Meme</a></button>
 <div>
-    <a href="/"><input type="button" id="button" value="Next Meme"></a>
     <img id="meme" src="{{ meme_pic }}" alt="{{ subreddit }}">
     <br>
     <text id="txt">This meme is from r/{{ subreddit }}</text>
 </div>
+<div id='heart' class='button'></div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mojs/core"></script>
+<script src="static/js/jaba.js"></script>
+<script src="static/js/heart.js"></script>
 </body>
 </html>

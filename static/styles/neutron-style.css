@@ -4,16 +4,22 @@
     text-decoration: none;
 }
 
-#button {
-    width: 100px;
-    margin: auto;
-    display: block;
+#a{
     color: blue;
-    background-color: darkcyan;
-    width: 160px;
-    height: 50px;
-    font-size: 25px;
-    text-decoration: none !important;
+}
+
+#button {
+    text-align: center;
+    color: blue;
+    font-size: 24px;
+    width: fit-content;
+    background: darkgrey;
+    cursor: pointer;
+    display: block;
+    border: none;
+    margin-right: 45%;
+    margin-left: 45%;
+    padding: 10px 10px;
 }
 
 #txt {
@@ -25,7 +31,7 @@
 }
 
 body {
-    background-color:  black;
+    background-color: black;
 }
 
 #meme {
@@ -40,19 +46,110 @@ body {
     display: block;
 }
 
-#list {
-    width: 100px;
+.hamburger {
+    position: relative;
+    display: block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.hamburger .bar, .hamburger:after, .hamburger:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: darkgrey;
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+
+.hamburger.is-active:before {
+    transform: rotate(-45deg) translate(-8px, 6px);
+    z-index: 100;
+    position: relative;
     display: block;
 }
 
-ul {
-
+.hamburger.is-active:after {
+    transform: rotate(45deg) translate(-9px, -8px);
+    z-index: 100;
+    position: relative;
+    display: block;
 }
 
-ul li {
-        list-style: none;
+.hamburger.is-active .bar {
+    opacity: 0;
 }
 
-ul li a {
-text-decoration: none;
+.nav {
+    position: fixed;
+    bottom: 73%;
+    right: 100%;
+    width: 14%;
+    height: 0px;
+    line-height: 3px;
+    display: block;
+    justify-content: space-between;
+    z-index: 98;
+    background-color: #582932;
+    padding: 140px 10px;
+    transition: 0.4s;
 }
+
+.nav.is-active {
+    left: 0;
+}
+
+.nav a {
+    display: block;
+    position: relative;
+    bottom: 90px;
+    left: 14%;
+    width: 65%;
+    height: 10%;
+    margin-block: -41px 50px;
+    text-align: center;
+    padding: 23px 11px;
+    background-color: midnightblue;
+    color: white;
+    text-decoration: none;
+}
+
+.nav a:hover{
+    background-color: black;
+}
+
+.active#heart:before,.active#heart:after{
+	background: red !important;
+}
+#heart {
+    width: 100px;
+    height: 90px;
+    transition: background 0.5s ease;
+}
+#heart:before,
+#heart:after {
+	transition: background 0.5s ease;
+    position: absolute;
+    content: "";
+    left: 50px;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    background: dimgrey;
+    border-radius: 50px 50px 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+#heart:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin :100% 100%;
+}
+
